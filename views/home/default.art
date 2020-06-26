@@ -1,0 +1,90 @@
+{{extend './common/layout.art'}}
+
+{{block 'link'}}
+	<link rel="stylesheet" href="/home/css/index.css">
+{{/block}}
+
+{{block 'main'}}
+{{include './common/header.art'}}
+
+<!-- 主要内容开始 -->
+<div class="list w1100">
+	<!--文章列表 开始-->
+	<ul class= "l-l">
+		{{each articles.records}}
+		<li class="media">
+			<div class="media-left">
+				<a href="/home/article?id={{@$value._id}}" >
+					<img class="media-object" src="{{$value.cover}}" alt="...">
+				</a>
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading">
+					<a class="article-title" href="/home/article?id={{@$value._id}}">{{$value.title}}</a>
+				</h4>
+				<div class="brief">
+					{{@$value.content}}
+				</div>
+				<div class = "footer">
+					<span class="author">作者：{{$value.author.username}}</span>
+					<span>时间：{{dateFormat($value.publishDate, 'yyyy-mm-dd')}}</span>
+				</div>
+			</div>
+		</li>
+		<!--
+		<li class="{{$index % 2 == 0 ? 'fl' : 'fr'}}">
+			<a href="/home/article?id={{@$value._id}}" class="thumbnail">
+				<img src="{{$value.cover}}">
+			</a>
+			<div class="content">
+				<a class="article-title" href="/home/article?id={{@$value._id}}">{{$value.title}}</a>
+				<div class="article-info">
+					<span class="author">{{$value.author.username}}</span>
+					<span>{{dateFormat($value.publishDate, 'yyyy-mm-dd')}}</span>
+				</div>
+				<div class="brief">
+					{{@$value.content}}
+				</div>
+			</div>
+		</li>
+		-->
+		{{/each}}
+	</ul>
+	<!--文章列表结束-->
+	<!--右侧列表开始-->
+	<div class = "l-r">
+		<form class="l-r-search" action = "/home/search" method = "post">
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">@</span>
+				<input type="text"autocomplete = "off"  class="form-control" name = "search" placeholder="文章搜索" aria-describedby="basic-addon1">
+			</div>
+		</form>
+		<div class = "hot-click">
+			<h3 class = "h-title">热门点击</h3>
+			<ul	class = "h-list">
+				{{each counts}}
+					<li>
+						<h3><a href = "/home/article?id={{@$value.aid._id}}"><span>{{$index+1}}<span>{{$value.aid.title}}</a></h3>
+					</li>
+				{{/each}}
+			</ul>
+		<div>
+	</div>
+	<!--右侧列表结束-->
+</div>
+<!-- 主要内容结束 -->
+
+<!-- 分页开始 -->
+<div class="page w1100">
+	{{if articles.page > 1}}
+	<a href="/home?page={{articles.page - 1}}">上一页</a>
+	{{/if}}
+	{{each articles.display}}
+	<a href="/home?page={{$value}}" class="active">{{$value}}</a>
+	{{/each}}
+	{{if articles.page < articles.pages}}
+	<a href="/home?page={{articles.page + 1}}">下一页</a>
+	{{/if}}
+</div>
+<!--分页结束-->
+{{/block}}

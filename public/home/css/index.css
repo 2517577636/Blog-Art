@@ -1,0 +1,203 @@
+/* Media Start */
+.list{
+	display: flex;
+	/* grid-template-columns:3fr 1fr; */
+}
+
+.list .l-l{
+	width: 75%;
+	margin-top: 20px;
+}
+
+.media{
+	position: relative;
+	box-shadow: 2px 2px 3px #e1e1e1;
+	height: 115px;
+	/* cursor: pointer; */
+}
+
+.media:hover{
+	box-shadow: 5px 5px 5px #e1e1e1;
+}
+
+	/* Media left start */
+.media .media-left a{
+	display: block;
+	overflow: hidden;
+	width: 150px;
+	height: 115px;
+	color: black;
+}
+
+.media:hover .media-left a{
+	color: #e74c3c;
+}
+
+.media .media-left a img{
+	display: block;
+	width: auto;
+	height: 100%;
+	transition: height .3s linear;
+}
+
+.media:hover .media-left a  img{
+	height:  110%;
+}
+	/* Media left end */
+
+	/* Media body Start */
+.media-body{
+	height: 100px;
+}
+
+.media-body .media-heading{
+	/* padding:5px 0px; */
+	height: 25px;
+}
+
+.media-body .media-heading .article-title{
+	/* display: block; */
+	/* padding: 5px 0; */
+	/* height: inherit; */
+	font-size: 22px;
+}
+
+.media-body .brief{
+	overflow: hidden;
+	width: 650px;
+	height: 60px;
+}
+
+ .media-body .brief p{
+	 height: 60px;
+	box-sizing: border-box;
+	padding: 5px;
+	font-size: 16px;
+	line-height: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+} 
+	/* Media body End */
+
+	/* Media footer start */
+.media .footer{
+	box-sizing: border-box;
+	font-size: 16px;
+	color: #7f8c8d;
+}
+
+.media .footer span:last-child{
+	margin-left: 10px;
+}
+	/* Media footer End */	
+/* Media End */
+
+
+/* 右侧列表 开始*/
+.l-r{
+	box-sizing: border-box;
+	width: 25%;
+	padding-left: 10px;
+	margin-top: 20px;
+	
+}
+
+.l-r-search{
+	margin-bottom: 20px;
+}
+
+.hot-click{
+	padding: 25px 7px;
+	background-color: #bdc3c7;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.hot-click .h-title{
+	color: #000;
+}
+
+.hot-click .h-list{
+	padding: 10px 0px;
+	margin-top: 20px;
+}
+
+.hot-click .h-list li{
+	margin: 10px;
+}
+
+.hot-click .h-list li span{
+	margin-left: 10px;
+}
+
+/* 右侧列表 结束 */
+
+
+
+
+
+
+/* 文章列表开始 */
+/* .list {
+	overflow: hidden;	
+}
+
+.list li {
+	width: 530px;
+	height: 430px;
+	background: #FFF;
+	margin-top: 30px;
+	box-shadow: 2px 2px 3px #e1e1e1;
+}
+
+.list .thumbnail, 
+.list .thumbnail img {
+	display: block;
+	width: 530px;
+	height: 240px;
+}
+
+.list .content {
+	padding: 16px 20px 0;
+} */
+
+/* .list .brief {
+	font-size: 14px;
+	line-height: 24px;
+	margin-top: 20px;
+} */
+/* .list .brief{
+	height: 60px;
+	font-size: 14px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.list .brief p{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+} */
+
+/* 文章列表结束 */
+
+/* 分页开始 */
+.page {
+	/* position: fixed; */
+	bottom: 0px;
+	padding: 30px 0;
+	font-size: 0;
+	text-align: center;
+}
+
+.page a {
+	display: inline-block;
+	font-size: 14px;
+	margin: 0 8px;
+}
+
+.page .active {
+	color: #ff7300;
+}
+/* 分页结束 */

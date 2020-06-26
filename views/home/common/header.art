@@ -1,0 +1,50 @@
+<!-- 头部框架开始 -->
+	<div class="header">
+		<div class="w1100">
+			<!-- 网站logo开始 -->
+			<h1 class="logo fl">
+				<a href="/home"><img src="images/logo.jpg" alt="BLOG"></a>
+			</h1>
+			<!-- 网站logo结束 -->
+			<!-- 网站导航开始 -->
+			<div class = 'h-r fr'>
+				<!--Tag Start
+				<ul class = "tags">
+					<li>
+						<a href="/home/share">Share</a>
+					</li>
+					<li>
+						<a href = "/home/diary">Diary</a>
+					</li>
+				</ul>
+				Tag End-->
+				<ul class="navigation ">
+					<li>
+						<a href="/home">首页</a>
+					</li>
+					{{if !userInfo}}
+					<li>
+						<a href="/home/login">登录</a>
+					</li>
+					{{else}}
+					<!--用户信息 Start-->
+					<li>
+						<div class="dropdown center-block">
+								<button type = "button" class="btn dropdown-toggle" data-toggle="dropdown">
+									{{userInfo && userInfo.username}}
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="/home/user">个人资料</a></li>
+									<li><a href="/home/logout">退出登录</a></li>
+								</ul>
+						</div>
+					</li>
+					{{/if}}
+					<!--用户信息 End-->
+				</ul>
+			</div>
+			<!-- 网站导航结束 -->
+		</div>
+	</div>
+	<!-- 头部框架结束 -->

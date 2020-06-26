@@ -1,0 +1,20 @@
+{{extend './common/layout.art'}}
+
+{{block 'link'}}
+<link rel="stylesheet" href="/home/css/user.css">
+{{/block}}
+
+{{block 'main'}}
+{{include './common/header.art'}}
+<div class = "user">
+	<div class = "username">
+		<div>用户名</div>:<div>{{userInfo.username}}</div>
+	</div>
+	<div class = "email">
+		<div>邮箱</div>:<div>{{userInfo.email}}</div>
+	</div>
+	<div class = "role">
+		<div>角色</div>:<div>{{userInfo.role}}</div>
+	</div>
+</div>
+{{/block}}

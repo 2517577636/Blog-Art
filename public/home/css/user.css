@@ -1,0 +1,19 @@
+.user{
+    width: 50%;
+    padding: 20px 10px;
+   margin: 200px auto;
+   font-size: 30px;
+   background: grey;
+   border-radius: 5px;
+   color: #fff;
+}
+
+.user>div{
+    display: flex;
+    padding: 10px 5px;
+    justify-content: space-between;
+}
+
+.user>div>div:first-child{
+    width: 20%;
+}
